@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>        
+	<head>
+	<script src="processing.js" type="text/javascript"></script> 
+	<script src="jquery-1.5.2.min.js" type="text/javascript"></script> 
+	<script src="jquery.blockUI.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	  
+function randomString(len) {
+    var charSet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var randomString = '';
+    for (var i = 0; i < len; i++) {
+    	var randomPoz = Math.floor(Math.random() * charSet.length);
+        //document.write("randomPoz:"+randomPoz+"\n");
+    	randomString += charSet.substring(randomPoz,randomPoz+1);
+    }
+    return randomString;
+}
+
+$(document).ready(function()
+{              
+	$("#line11").bind("click",function()
+	{
+		//window.console.log("line1 click");
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.addPulseType(11);
+    });        
+	$("#line12").bind("click",function()
+	{
+		//window.console.log("line1 click");
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.addPulseType(12);
+    });         
+	$("#line13").bind("click",function()
+	{
+		//window.console.log("line1 click");
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.addPulseType(13);
+    });        
+	$("#line14").bind("click",function()
+	{
+		//window.console.log("line1 click");
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.addPulseType(14);
+    });        
+	$("#line15").bind("click",function()
+	{
+		//window.console.log("line1 click");
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.addPulseType(15);
+    });        
+	$("#line16").bind("click",function()
+	{
+		//window.console.log("line1 click");
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.addPulseType(16);
+    });        
+	$("#line17").bind("click",function()
+	{
+		//window.console.log("line1 click");
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.addPulseType(17);
+    });        
+	$("#line21").bind("click",function()
+	{
+		//window.console.log("line1 click");
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.addPulseType(21);
+    });        
+	$("#line22").bind("click",function()
+	{
+		//window.console.log("line1 click");
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.addPulseType(22);
+    });         
+	$("#line23").bind("click",function()
+	{
+		//window.console.log("line1 click");
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.addPulseType(23);
+    });         
+	$("#line24").bind("click",function()
+	{
+		//window.console.log("line1 click");
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.addPulseType(24);
+    });         
+	$("#line25").bind("click",function()
+	{
+		//window.console.log("line1 click");
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.addPulseType(25);
+    });        
+	$("#line31").bind("click",function()
+	{
+		//window.console.log("line1 click");
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.addPulseTypeGroup(31);
+    });        
+	$("#line32").bind("click",function()
+	{
+		//window.console.log("line1 click");
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.addPulseTypeGroup(32);
+    });        
+	$("#line33").bind("click",function()
+	{
+		//window.console.log("line1 click");
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.addPulseTypeGroup(33);
+    });       
+	$("#line34").bind("click",function()
+	{
+		//window.console.log("line1 click");
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.addPulseTypeGroup(34);
+    });      
+	$("#line35").bind("click",function()
+	{
+		//window.console.log("line1 click");
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.addPulseTypeGroup(35);
+    });      
+	$("#line36").bind("click",function()
+	{
+		//window.console.log("line1 click");
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.addPulseTypeGroup(36);
+    });      
+	$("#line37").bind("click",function()
+	{
+		//window.console.log("line1 click");
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.addPulseTypeGroup(37);
+    });                  
+	$("#line38").bind("click",function()
+	{
+		//window.console.log("line1 click");
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.addPulseTypeGroup(38);
+    });                         
+	$("#line39").bind("click",function()
+	{
+		//window.console.log("line1 click");
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.addPulseTypeGroup(39);
+    });     
+	$("#line40").bind("click",function()
+	{
+		//window.console.log("line1 click");
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.addPulseTypeGroup(40);
+    });      
+	$("#line41").bind("click",function()
+	{
+		//window.console.log("line1 click");
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.addPulseTypeGroup(41);
+    });       
+	$("#line42").bind("click",function()
+	{
+		//window.console.log("line1 click");
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.addPulseTypeGroup(42);
+    });  
+	$("#line51").bind("click",function()
+	{
+		//window.console.log("line1 click");
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.addPulseTypeGroup(51);
+    });      
+	$("#line52").bind("click",function()
+	{
+		//window.console.log("line1 click");
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.addPulseTypeGroup(52);
+    });     
+	$("#line61").bind("click",function()
+	{
+		//window.console.log("line1 click");
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.addPulseType(61);
+    });     
+	$("#line62").bind("click",function()
+	{
+		//window.console.log("line1 click");
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.addPulseType(62);
+    });     
+	$("#line71").bind("click",function()
+	{
+		//window.console.log("line1 click");
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.addPulseType(71);
+    });    
+	$("#line72").bind("click",function()
+	{
+		//window.console.log("line1 click");
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.addPulseType(72);
+    });    
+	$("#line73").bind("click",function()
+	{
+		//window.console.log("line1 click");
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.addPulseType(73);
+    });    
+	$("#line74").bind("click",function()
+	{
+		//window.console.log("line1 click");
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.addPulseType(74);
+    });    
+	$("#line75").bind("click",function()
+	{
+		//window.console.log("line1 click");
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.addPulseType(75);
+    });    
+	$("#line76").bind("click",function()
+	{
+		//window.console.log("line1 click");
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.addPulseType(76);
+    });       
+	$("#close").bind("click",function()
+	{
+		$.unblockUI();
+    });      
+	$("#image_cancel").bind("click",function()
+	{
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.cancelPulse();
+    });
+});
+	
+	</script>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	</head>
+	<body>
+	<table width="100%" border="0" >
+		<tr>
+			<td width="250">
+				<canvas width="200px" height="200px" id="pulse_canvas" data-processing-sources="demo.pde"></canvas>
+			</td> 
+			<td valign="top">
+				<input type="button" name="line11" id="line11" value="弱脈"> 
+				<input type="button" name="line12" id="line12" value="細脈">   
+				<input type="button" name="line13" id="line13" value="小脈1">  
+				<input type="button" name="line14" id="line14" value="小脈2">  
+				<input type="button" name="line15" id="line15" value="小脈3">  
+				<input type="button" name="line16" id="line16" value="大脈1">  
+				<input type="button" name="line17" id="line17" value="大脈2"> 
+				<br>    
+				<input type="button" name="line21" id="line21" value="弦脈1"> 
+				<input type="button" name="line22" id="line22" value="緊脈2"> 
+				<input type="button" name="line23" id="line23" value="緊脈3"> 
+				<input type="button" name="line24" id="line24" value="緊脈4"> 
+				<input type="button" name="line25" id="line25" value="刀脈"> 
+				<br>    
+				<input type="button" name="line31" id="line31" value="虛脈"> 
+				<input type="button" name="line32" id="line32" value="滑脈"> 
+				<input type="button" name="line33" id="line33" value="洪脈"> 
+				<input type="button" name="line34" id="line34" value="緩脈"> 
+				<input type="button" name="line35" id="line35" value="豆脈"> 
+				<input type="button" name="line36" id="line36" value="動脈"> 
+				<input type="button" name="line37" id="line37" value="芤脈">
+				<br>  
+				<input type="button" name="line38" id="line38" value="散脈">  
+				<input type="button" name="line39" id="line39" value="革脈">                                               
+				<input type="button" name="line40" id="line40" value="濡脈">  
+				<input type="button" name="line41" id="line41" value="代脈"> 
+				<input type="button" name="line51" id="line51" value="黏脈">  
+				<input type="button" name="line52" id="line52" value="澀脈"> 
+				<input type="button" name="line61" id="line61" value="速脈">  
+				<input type="button" name="line62" id="line62" value="遲脈">  
+				<br>  
+				<input type="button" name="line71" id="line71" value="鼓動大1"> 
+				<input type="button" name="line72" id="line72" value="鼓動大2"> 
+				<input type="button" name="line73" id="line73" value="鼓動大3"> 
+				<input type="button" name="line74" id="line74" value="鼓動弱1"> 
+				<input type="button" name="line75" id="line75" value="鼓動弱2"> 
+				<input type="button" name="line76" id="line76" value="鼓動弱3"> 
+				<br>  
+				<input type="button" name="line91" id="line91" value="伏脈"> 
+				<br>  
+				<input type="button" name="image_create" id="image_create"  onclick="save();" value="產生圖檔">   
+				<input type="button" name="image_cancel" id="image_cancel"  value="清除脈圖">
+			</td>
+		</tr>
+	</table>
+<div id="question" style="display:none; cursor: default"> 
+		<img id="image" />
+		<br>
+		<a id="show_img" target="_blank" href="#">none</a>
+		<br>
+        <input type="button" id="close" value="Close" /> 
+</div>
+	</body>
+</html>
+<script>
+function save()
+{               
+	var now = new Date;
+	var request={};
+	var utc_timestamp = Date.UTC(now.getUTCFullYear(),now.getUTCMonth(), now.getUTCDate() , 
+	      now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds(), now.getUTCMilliseconds());
+	var id=randomString(10)+utc_timestamp;                   
+	var p = Processing.getInstanceById('pulse_canvas');
+	var canvas = document.getElementById('pulse_canvas');
+	var image2 = document.getElementById('image2');
+    p.cancelPressed();
+    var obj=p.getPulseObj();
+	//window.console.log("id:"+id+",save():"+obj);
+    
+    request["id"]=id; 
+    request["image"]=canvas.toDataURL();
+    
+    var objArray=obj.split("@");
+    for(var i=0;i<objArray.length;i++)
+    {
+        if(objArray[i].length>0)
+        {
+            //window.console.log("i:"+i+",objArray[i]:"+objArray[i]);
+            var tempArray=objArray[i].split(":");
+            if(tempArray.length>0)
+            {
+                if(typeof(request["pulse"+tempArray[0]])=="string")
+                    request["pulse"+tempArray[0]]+=","+tempArray[1];
+                else
+                    request["pulse"+tempArray[0]]=tempArray[1];
+                
+            }
+        }
+    }
+	//window.console.log(request);
+	
+	$.post("php/insert_image.php",request,function(data)
+    {
+        var res=jQuery.parseJSON(data );
+        var link="http://pulse.jay-men.org/php/show_image.php?id="+id;
+        window.console.log(res.Msg);
+        $.blockUI.defaults.css.width="1000px"; 
+        $.blockUI.defaults.css.top="50px"; 
+        $.blockUI.defaults.css.left="50px";
+        if(res.Msg=="OK")
+        {           
+            image.src= canvas.toDataURL();
+            $("#show_img").attr("href",link); 
+            $("#show_img").text(link);
+			$.blockUI({ message: $('#question') });
+        }
+        else
+        { 
+            window.console.log(res);
+        }
+    });
+    
+    
+    //image.value = canvas.toDataURL();
+    //this.href=canvas.toDataURL();
+}
+</script>
