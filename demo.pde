@@ -275,6 +275,21 @@ void drawPulse()
 				strokeWeight(2); // Thicker
 				line(x,y,x2,y);     
 				line(x,y2,x2,y2);    
+			} 
+			else if(bt.type==18)
+			{     
+				int y=bt.y+5; 
+				int y2=0;
+				int x=bt.x+22; 
+				int x2=x+120;
+				 
+				y2=y+8;
+		 			
+				// Set stroke-color white
+				stroke(0);    
+				strokeWeight(4); // Thicker
+				line(x,y,x2,y);     
+				line(x,y2,x2,y2);  
 			}
 			else if(bt.type>=21 && bt.type<=25)
 			{    
@@ -297,7 +312,7 @@ void drawPulse()
 						y2=y1+8;
 						break;
 					} 
-					else if(tmp_bt.type>=16 && tmp_bt.type<=17)
+					else if(tmp_bt.type>=16 && tmp_bt.type<=18)
 					{
 						y1=bt.y+1; 
 						y2=y1+8;
@@ -730,6 +745,54 @@ void drawPulse()
 				line(x+w,y,x+w,y-12);        
 				line(x+w,y,x+w-3,y-5);     
 				line(x+w,y,x+w+3,y-5);       
+			}   
+			else if(bt.type==81)
+			{     
+				//int idx=(int)(bt.idx/5);
+				int x=bt.x; 
+				int y=bt.y+37;   
+				int w=20;
+				
+		 		//window.console.log("idx:"+idx+",x:"+x+",w:"+w+",w2:"+w2+",w3:"+w3); 
+				// Set stroke-color black
+				stroke(0);    
+				strokeWeight(2); // Thicker
+				noFill();
+				 	                        
+				line(x+w,y,x+w-10,y-6);        
+				line(x+w,y,x+w+10,y-6);        
+			}
+			else if(bt.type==82)
+			{     
+				//int idx=(int)(bt.idx/5);
+				int x=bt.x; 
+				int y=bt.y+35;   
+				int w=20;
+				
+		 		//window.console.log("idx:"+idx+",x:"+x+",w:"+w+",w2:"+w2+",w3:"+w3); 
+				// Set stroke-color black
+				stroke(0);    
+				strokeWeight(2); // Thicker
+				noFill();
+				 	                        
+				line(x+w-2,y-6,x+w-2,y+3);        
+				line(x+w+2,y-6,x+w+2,y+3);        
+			}
+			else if(bt.type==83)
+			{     
+				//int idx=(int)(bt.idx/5);
+				int x=bt.x; 
+				int y=bt.y+37;   
+				int w=20;
+				
+		 		//window.console.log("idx:"+idx+",x:"+x+",w:"+w+",w2:"+w2+",w3:"+w3); 
+				// Set stroke-color black
+				stroke(0);    
+				strokeWeight(2); // Thicker
+				noFill();
+				 	                        
+				line(x+w,y-6,x+w-10,y);        
+				line(x+w,y-6,x+w+10,y);        
 			}
 		}
 	}

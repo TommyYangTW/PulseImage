@@ -61,6 +61,12 @@ $(document).ready(function()
 		var p = Processing.getInstanceById('pulse_canvas');
 	  	if(p)p.addPulseType(17);
     });        
+	$("#line18").bind("click",function()
+	{
+		//window.console.log("line1 click");
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.addPulseType(18);
+    });        
 	$("#line21").bind("click",function()
 	{
 		//window.console.log("line1 click");
@@ -222,6 +228,24 @@ $(document).ready(function()
 		//window.console.log("line1 click");
 		var p = Processing.getInstanceById('pulse_canvas');
 	  	if(p)p.addPulseType(76);
+    });    
+	$("#line81").bind("click",function()
+	{
+		//window.console.log("line1 click");
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.addPulseType(81);
+    });    
+	$("#line82").bind("click",function()
+	{
+		//window.console.log("line1 click");
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.addPulseType(82);
+    });    
+	$("#line83").bind("click",function()
+	{
+		//window.console.log("line1 click");
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.addPulseType(83);
     });       
 	$("#close").bind("click",function()
 	{
@@ -250,7 +274,8 @@ $(document).ready(function()
 				<input type="button" name="line14" id="line14" value="小脈2">  
 				<input type="button" name="line15" id="line15" value="小脈3">  
 				<input type="button" name="line16" id="line16" value="大脈1">  
-				<input type="button" name="line17" id="line17" value="大脈2"> 
+				<input type="button" name="line17" id="line17" value="大脈2">  
+				<input type="button" name="line18" id="line18" value="牢脈"> 
 				<br>    
 				<input type="button" name="line21" id="line21" value="弦脈1"> 
 				<input type="button" name="line22" id="line22" value="緊脈2"> 
@@ -282,7 +307,12 @@ $(document).ready(function()
 				<input type="button" name="line75" id="line75" value="鼓動弱2"> 
 				<input type="button" name="line76" id="line76" value="鼓動弱3"> 
 				<br>  
-				<input type="button" name="line91" id="line91" value="伏脈"> 
+				<input type="button" name="line81" id="line81" value="大於下脈"> 
+				<input type="button" name="line82" id="line82" value="等於下脈"> 
+				<input type="button" name="line83" id="line83" value="小於下脈"> 
+				<br>   
+				<input type="button" name="line91" id="line91" value="長脈">
+				<input type="button" name="line92" id="line92" value="伏脈">  
 				<br>  
 				<input type="button" name="image_create" id="image_create"  onclick="save();" value="產生圖檔">   
 				<input type="button" name="image_cancel" id="image_cancel"  value="清除脈圖">
