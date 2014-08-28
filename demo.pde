@@ -143,8 +143,7 @@ void draw(){
 
 
 // Set circle's next destination
-void mouseMoved(){
-                      
+void mouseMoved(){   
   	noStroke();
 	for(int i=0;i<pareaList.size();i++)
 	{                            
@@ -223,7 +222,7 @@ void drawPulse()
 	for(int i=0;i<bloodList.size();i++)
 	{                     
 		ArrayList blist=(ArrayList)bloodList.get(i); 
-		int group_idx=1;   
+		int group_idx=1;      
 		       
 		for(int j = blist.size()-1;j>= 0;j--)
 		{  
@@ -402,8 +401,8 @@ void drawPulse()
 				strokeWeight(2); // Thicker
 				noFill();
 				 	
-				arc(x,y,10,10,PI*4/5,TWO_PI); 
-				arc(x+10,y,10,10,0-(PI*1/5),PI);
+				arc(x,y,10,10,0,PI+(PI*1/5));  
+				arc(x+10,y,10,10,PI,TWO_PI+(PI*1/5)); 
 				group_idx++;        
 			}
 			else if(bt.type==35)
@@ -566,15 +565,25 @@ void drawPulse()
 			else if(bt.type==61)
 			{     
 				int idx=(int)(bt.idx/5);
-				int x=bt.x; 
-				int y=bt.y+25;   
+				int x=0; 
+				int y=0;   
 				int len=10;  
 				int w=-20;
 				int w2=w+len+10; 
 				int w3=w2+len+10;
+				   
+				x=50+area_space*(idx%3);
 				
-		 		
-		 		//window.console.log("idx:"+idx+",x:"+x+",w:"+w+",w2:"+w2+",w3:"+w3); 
+				if((idx/3)>=1)
+				{          
+					y=320-10;
+				}
+				else
+				{    
+					y=50-10;
+				}
+				
+				//window.console.log("bt.idx:"+bt.idx+",idx:"+idx+",x:"+x+",y:"+y+",group_size:"+bt.group_size+",w:"+w+",w2:"+w2+",w3:"+w3); 
 				// Set stroke-color black
 				stroke(0);    
 				strokeWeight(2); // Thicker
@@ -588,7 +597,7 @@ void drawPulse()
 				line(x+w2+len,y,x+w2+len-5,y+3); 
 				line(x+w3,y,x+w3+len,y);        
 				line(x+w3+len,y,x+w3+len-5,y-3);      
-				line(x+w3+len,y,x+w3+len-5,y+3);         
+				line(x+w3+len,y,x+w3+len-5,y+3); 
 			}  
 			else if(bt.type==62)
 			{     
@@ -598,9 +607,20 @@ void drawPulse()
 				int len=10;  
 				int w=-20;
 				int w2=w+len+10; 
-				int w3=w2+len+10;
+				int w3=w2+len+10;  
+				   
+				x=50+area_space*(idx%3);
 				
-		 		//window.console.log("idx:"+idx+",x:"+x+",w:"+w+",w2:"+w2+",w3:"+w3); 
+				if((idx/3)>=1)
+				{          
+					y=320-10;
+				}
+				else
+				{     
+					y=50-10;
+				}
+				
+		 		//window.console.log("bt.idx:"+bt.idx+",idx:"+idx+",x:"+x+",y:"+y+",group_size:"+bt.group_size+",w:"+w+",w2:"+w2+",w3:"+w3); 
 				// Set stroke-color black
 				stroke(0);    
 				strokeWeight(2); // Thicker
@@ -612,8 +632,46 @@ void drawPulse()
 				line(x+w2+10,y,x+w2+14,y);        
 				line(x+w3,y,x+w3+len,y);        
 				line(x+w3+len,y,x+w3+len-5,y-3);      
-				line(x+w3+len,y,x+w3+len-5,y+3);         
-			}  
+				line(x+w3+len,y,x+w3+len-5,y+3);          
+			}
+			else if(bt.type==63)
+			{     
+				int idx=(int)(bt.idx/5);
+				int x=0; 
+				int y=0;   
+				int len=10;  
+				int w=-20;
+				int w2=w+len+10; 
+				int w3=w2+len+10;
+				   
+				x=50+area_space*(idx%3);
+				
+				if((idx/3)>=1)
+				{          
+					y=320-10;
+				}
+				else
+				{    
+					y=50-10;
+				}
+				
+				//window.console.log("bt.idx:"+bt.idx+",idx:"+idx+",x:"+x+",y:"+y+",group_size:"+bt.group_size+",w:"+w+",w2:"+w2+",w3:"+w3); 
+				// Set stroke-color black
+				stroke(0);    
+				strokeWeight(2); // Thicker
+				noFill();
+				 	                        
+				line(x+w,y,x+w+len,y);        
+				line(x+w+len,y,x+w+len-5,y-3);      
+				line(x+w+len,y,x+w+len-5,y+3);  
+				line(x+w2,y,x+w2+len,y);        
+				line(x+w2+len,y,x+w2+len-5,y-3);      
+				line(x+w2+len,y,x+w2+len-5,y+3); 
+				line(x+w3,y,x+w3+len,y);        
+				line(x+w3+len,y,x+w3+len-5,y-3);      
+				line(x+w3+len,y,x+w3+len-5,y+3);
+				arc(x+6,y,61,17,0,TWO_PI);    
+			}   
 			else if(bt.type==71)
 			{     
 				//int idx=(int)(bt.idx/5);
@@ -794,6 +852,34 @@ void drawPulse()
 				line(x+w,y-6,x+w-10,y);        
 				line(x+w,y-6,x+w+10,y);        
 			}
+			else if(bt.type==91)
+			{     
+				int idx=(int)(bt.idx/15);
+				int x=10;  
+				int x2=770; 
+				int y=0;   
+				int w=0;
+				
+				if(idx==0)
+				{
+				    y=140;
+                }
+                else if(idx==1)
+				{
+				    y=410;
+                }
+				
+		 		//window.console.log("idx:"+idx+",x:"+x+",w:"+w+",w2:"+w2+",w3:"+w3); 
+				// Set stroke-color black
+				stroke(0);    
+				strokeWeight(2); // Thicker
+				noFill();
+				 	                        
+				line(x,y,x+10,y-10);       
+				line(x,y,x+10,y+10);        
+				line(x2,y,x2-10,y-10);       
+				line(x2,y,x2-10,y+10);           
+			}
 		}
 	}
 }
@@ -839,12 +925,113 @@ void addPulseType(int ptype) {
 			bt.w=parea.w; 
 			bt.idx=parea.idx;
 			bt.type=ptype;
+			bt.group_size=0;
 			blist.add(bt);
 		}
 	}
 	mouseMoved();	
 }
  
+void addLongPulseType(int ptype) {
+	bgDraw();
+	if(areaSelectIdx==-1)
+	{
+		return;
+	}
+	int areaID=(int)(areaSelectIdx/15);
+	int findId=0;
+    //check before LongPulse area
+	for(int i=(areaID*15);i<(areaID+1)*15;i++)
+	{                     
+		ArrayList blist=(ArrayList)bloodList.get(i); 
+		for(int j = blist.size()-1; j >= 0; j--)
+		{   
+			BloodType bt=(BloodType)blist.get(j);  
+			int areaIDtmp=(int)(bt.idx/15);    
+			//window.console.log("p1:"+p1+",p2:"+p2);
+			if(bt.type==91 && areaIDtmp==areaID )
+			{   
+				blist.remove(j); 
+				mouseMoved();
+				return;
+			} 
+		}
+	}
+    //add LongPulse 
+	ArrayList blist=(PulseArea)bloodList.get(areaSelectIdx);
+	for(int i=0;i<pareaList.size();i++)
+	{                 
+		PulseArea parea=(PulseArea)pareaList.get(i);           
+  		if(parea.idx==areaSelectIdx) 
+		{                
+			//window.console.log("parea.idx:"+parea.idx);
+  			BloodType bt=new BloodType();  
+			bt.x=parea.x;
+			bt.y=parea.y; 
+			bt.h=parea.h;
+			bt.w=parea.w; 
+			bt.idx=parea.idx;
+			bt.type=ptype;
+			bt.group_size=0;
+			blist.add(bt);
+		}
+	} 
+	mouseMoved();
+}
+ 
+void addFastPulseType(int ptype) {
+	bgDraw();
+	if(areaSelectIdx==-1)
+	{
+		return;
+	}
+	int areaID=(int)(areaSelectIdx/5);
+	int findId=0;
+    //check before LongPulse area
+	for(int i=(areaID*5);i<(areaID+1)*5;i++)
+	{                     
+		ArrayList blist=(ArrayList)bloodList.get(i); 
+		for(int j = blist.size()-1; j >= 0; j--)
+		{   
+			BloodType bt=(BloodType)blist.get(j);  
+			int areaIDtmp=(int)(bt.idx/5);  
+			int typeIDtmp=(int)(bt.type/10);       
+			//window.console.log("addFastPulseType()i:"+i+",j:"+j+",bt.type:"+bt.type+",ptype:"+ptype+"areaIDtmp:"+areaIDtmp+",areaID:"+areaID);
+			if(bt.type==ptype && areaIDtmp==areaID )
+			{   
+				blist.remove(j);
+				findId=1; 
+				mouseMoved();
+				return;
+			}
+			else if(typeIDtmp==6)
+			{    
+				blist.remove(j); 
+			} 
+		}
+	}
+    //add Pulse 
+	ArrayList blist=(PulseArea)bloodList.get(areaSelectIdx);
+	for(int i=0;i<pareaList.size();i++)
+	{                 
+		PulseArea parea=(PulseArea)pareaList.get(i);           
+  		if(parea.idx==areaSelectIdx) 
+		{                
+			//window.console.log("parea.idx:"+parea.idx);
+  			BloodType bt=new BloodType();  
+			bt.x=parea.x;
+			bt.y=parea.y; 
+			bt.h=parea.h;
+			bt.w=parea.w; 
+			bt.idx=parea.idx;
+			bt.type=ptype;
+			bt.group_size=0;
+			blist.add(bt);
+		}
+	} 
+	mouseMoved();
+}
+
 void addPulseTypeGroup(int ptype) {
 	bgDraw();
 	if(areaSelectIdx==-1)
@@ -852,11 +1039,13 @@ void addPulseTypeGroup(int ptype) {
 		return;
 	}
 	int findId=0;
-	int group_size=0;      
+	int group_size=0; 
+	int group_slow_fast_size=0;      
 	ArrayList blist=(PulseArea)bloodList.get(areaSelectIdx);
 	//window.console.log("areaSelectIdx:"+areaSelectIdx+",ptype:"+ptype+",blist.size():"+blist.size());
+	//count before BloodType group size
 	if(blist.size()>0)
-	{ 
+	{                               
 		for(int i = blist.size()-1; i >= 0; i--)
 		{   
 			BloodType bt=(BloodType)blist.get(i);  
@@ -868,12 +1057,17 @@ void addPulseTypeGroup(int ptype) {
 				blist.remove(i);
 				findId=1;
 			}
-			else if(ptype>30 && ptype<50)
+			else if(bt.type>30 && bt.type<50)
 			{          
 				group_size++;
+			}
+			else if(bt.type>60 && bt.type<70)
+			{          
+				group_slow_fast_size++;
 			} 
 		}
 	}
+	//add new BloodType and set group size
 	if(findId==0)
 	{
 		for(int i=0;i<pareaList.size();i++)
@@ -881,7 +1075,15 @@ void addPulseTypeGroup(int ptype) {
 			PulseArea parea=(PulseArea)pareaList.get(i);           
 	  		if(parea.idx==areaSelectIdx) 
 			{         
-				group_size++;       
+                if(ptype>30 && ptype<50)
+		        {          
+				    group_size++;
+                }
+                else if(ptype>60 && ptype<70)
+                {          
+				    group_slow_fast_size++;
+                }          
+			     
 				//window.console.log("parea.idx:"+parea.idx);
 	  			BloodType bt=new BloodType();
 				bt.x=parea.x;
@@ -890,20 +1092,30 @@ void addPulseTypeGroup(int ptype) {
 				bt.w=parea.w; 
 				bt.idx=parea.idx;
 				bt.type=ptype;
-				bt.group_size=group_size;
+				if(ptype>60 && ptype<70)
+				    bt.group_size=group_slow_fast_size;
+				else if(ptype>30 && ptype<50)
+				    bt.group_size=group_size;
 				blist.add(bt);
 			}
 		}
-	} 
+	}       
+	//count before BloodType and set new group size
 	for(int i = blist.size()-1; i >= 0; i--)
 	{   
 		BloodType bt=(BloodType)blist.get(i);  
 		int p1=(int)(bt.type/10);    
 		int p2=(int)(ptype/10);
 		//window.console.log("p1:"+p1+",p2:"+p2);
-		if(ptype>30 && ptype<50)
+		if(bt.type>30 && bt.type<50)
 		{     
 			bt.group_size=group_size;
+			blist.remove(i);   
+			blist.add(bt);  
+		}
+		else if(bt.type>60 && bt.type<70)
+		{     
+			bt.group_size=group_slow_fast_size;
 			blist.remove(i);   
 			blist.add(bt);  
 		} 

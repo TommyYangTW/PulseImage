@@ -185,13 +185,19 @@ $(document).ready(function()
 	{
 		//window.console.log("line1 click");
 		var p = Processing.getInstanceById('pulse_canvas');
-	  	if(p)p.addPulseType(61);
+	  	if(p)p.addFastPulseType(61);
     });     
 	$("#line62").bind("click",function()
 	{
 		//window.console.log("line1 click");
 		var p = Processing.getInstanceById('pulse_canvas');
-	  	if(p)p.addPulseType(62);
+	  	if(p)p.addFastPulseType(62);
+    });     
+	$("#line63").bind("click",function()
+	{
+		//window.console.log("line1 click");
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.addFastPulseType(63);
     });     
 	$("#line71").bind("click",function()
 	{
@@ -246,7 +252,13 @@ $(document).ready(function()
 		//window.console.log("line1 click");
 		var p = Processing.getInstanceById('pulse_canvas');
 	  	if(p)p.addPulseType(83);
-    });       
+    });     
+	$("#line91").bind("click",function()
+	{
+		//window.console.log("line1 click");
+		var p = Processing.getInstanceById('pulse_canvas');
+	  	if(p)p.addLongPulseType(91);
+    });      
 	$("#close").bind("click",function()
 	{
 		$.unblockUI();
@@ -268,6 +280,8 @@ $(document).ready(function()
 				<canvas width="200px" height="200px" id="pulse_canvas" data-processing-sources="demo.pde"></canvas>
 			</td> 
 			<td valign="top">
+				不支援IE8以下的瀏覽器,支援IE9,IE10,Chrome,Firefox瀏覽器
+				<br>
 				<input type="button" name="line11" id="line11" value="弱脈"> 
 				<input type="button" name="line12" id="line12" value="細脈">   
 				<input type="button" name="line13" id="line13" value="小脈1">  
@@ -297,8 +311,9 @@ $(document).ready(function()
 				<input type="button" name="line41" id="line41" value="代脈"> 
 				<input type="button" name="line51" id="line51" value="黏脈">  
 				<input type="button" name="line52" id="line52" value="澀脈"> 
-				<input type="button" name="line61" id="line61" value="速脈">  
-				<input type="button" name="line62" id="line62" value="遲脈">  
+				<input type="button" name="line61" id="line61" value="數脈">  
+				<input type="button" name="line62" id="line62" value="遲脈"> 
+				<input type="button" name="line63" id="line63" value="疾脈">  
 				<br>  
 				<input type="button" name="line71" id="line71" value="鼓動大1"> 
 				<input type="button" name="line72" id="line72" value="鼓動大2"> 
@@ -319,12 +334,11 @@ $(document).ready(function()
 			</td>
 		</tr>
 	</table>
-<div id="question" style="display:none; cursor: default"> 
+<div id="question" style="display:none; cursor: default">
+        <input type="button" id="close" value="Close" />  
+		圖片連結:<a id="show_img" target="_blank" href="#">none</a>  
+		<br>
 		<img id="image" />
-		<br>
-		<a id="show_img" target="_blank" href="#">none</a>
-		<br>
-        <input type="button" id="close" value="Close" /> 
 </div>
 	</body>
 </html>
@@ -371,8 +385,8 @@ function save()
         var link="http://pulse.jay-men.org/php/show_image.php?id="+id;
         window.console.log(res.Msg);
         $.blockUI.defaults.css.width="1000px"; 
-        $.blockUI.defaults.css.top="50px"; 
-        $.blockUI.defaults.css.left="50px";
+        $.blockUI.defaults.css.top="20px"; 
+        $.blockUI.defaults.css.left="20px";
         if(res.Msg=="OK")
         {           
             image.src= canvas.toDataURL();

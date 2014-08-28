@@ -1,0 +1,9 @@
+PulseImage UI ChangeLog
+
+v0.3 Aug.23.2014, Tommy 
+ 1.[NEW]add SuperFastPulse type 
+ 2.[FIX]slow & fast pulse issue
+v0.2 Aug.23.2014, Tommy
+ 1.[FIX]slow & fast pulse doesn't get together
+ 2.[FIX]sluggishly pulse image isn't correct
+ 3.[NEW]add LongPulse type
